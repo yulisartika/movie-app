@@ -6,12 +6,17 @@ import App from "./App";
 import { firebase } from "./lib/firebase.prod";
 import { FirebaseContext } from "./context/firebase";
 
+import { Provider } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "./index.css";
+import storeRedux from "./store";
+
 render(
   <React.StrictMode>
-    <FirebaseContext.Provider value={{ firebase }}>
-      <GlobalStyles />
+    <Provider store={storeRedux}>
       <App />
-    </FirebaseContext.Provider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
