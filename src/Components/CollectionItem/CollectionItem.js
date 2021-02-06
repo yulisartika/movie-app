@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import { FixString } from "../../Utils/FixString";
 
 const CollectionItem = ({ item, movies, history }) => {
-  const { title, synopsis, image, name } = item;
+  const { title, synopsis, image, name, _id } = item;
   const synop = Truncate(synopsis, 120, " ..read more");
   var titlePath = movies ? FixString(title) : null;
   return (
@@ -13,7 +13,7 @@ const CollectionItem = ({ item, movies, history }) => {
       {/* //Routing to movie detail */}
       <div
         onClick={() => {
-          return movies && history.push(`/movies/${titlePath}`);
+          return movies && history.push(`/movie-detail/${_id}`);
         }}
       >
         {/* Movie card grid */}

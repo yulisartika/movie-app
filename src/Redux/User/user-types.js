@@ -1,6 +1,5 @@
-const UserActionTypes = {
-	SET_CURRENT_USER: 'SET_CURRENT_USER',
-	TOGGLE_HIDDEN_MENU: 'TOGGLE_HIDDEN_MENU'
-}
-
-export default UserActionTypes;
+export const SIGN_IN_SUCCESS = "SIGN_IN_SUCCESS";
+export const SIGN_OUT_SUCCESS = "SIGN_OUT_SUCCESS";
+export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
+export const TOGGLE_HIDDEN_MENU = "TOGGLE_HIDDEN_MENU";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
