@@ -10,10 +10,9 @@ export function getMovies() {
   return (dispatch) => {
     fetchData().then((data) => {
       const movieData = data[0].data.result.map((results) => results);
-      // const movieData = data.map(({ results }) => results);
       var newArray = Array.prototype.concat.apply([], movieData);
-      console.log(movieData);
-      console.log(newArray);
+      // console.log(movieData);
+      // console.log(newArray);
       dispatch({
         type: MovieActionTypes.SET_MOVIE_DATA,
         payload: newArray,
