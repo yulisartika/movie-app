@@ -8,7 +8,7 @@ const CollectionOverview = ({ movies, collection }) => (
   <div className="collection-overview">
     {collection.map((items) => (
       <CollectionPreview
-        key={items._id}
+        key={items.id}
         title={items.title}
         start={items.start}
         end={items.end}

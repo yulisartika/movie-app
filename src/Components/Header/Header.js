@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../Assets/logo.png";
 import "./Header.scss";
 import { withRouter } from "react-router";
 import SearchBar from "../SearchBar/SearchBar";
-import { auth } from "../../Firebase/firebase.utils";
-import {
-  selectCurrentUser,
-  selectToggleHidden,
-} from "../../Redux/User/user-selectors";
-import { ToggleMenuHidden } from "../../Redux/User/user-actions";
+// import {
+//   selectCurrentUser,
+//   selectToggleHidden,
+// } from "../../Redux/User/user-selectors";
+// import { ToggleMenuHidden } from "../../Redux/User/user-actions";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NavMenu from "./NavMenu";
+// import { faBars } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import NavMenu from "./NavMenu";
+
+import { useLocation } from "react-router-dom";
+// import { Collapse, NavbarToggler, NavItem } from "reactstrap";
+import { signOutUser } from "../../Redux/User/user-actions";
 
 const Header = ({
   history,
@@ -22,7 +25,23 @@ const Header = ({
   currentRoute,
   hidden,
   ToggleMenuHidden,
+  signOutUser,
+  token,
 }) => {
+  // const [isOpen, setIsOpen] = useState(false);
+  // const toggle = () => setIsOpen(!isOpen);
+
+  const handleLogout = () => {
+    signOutUser();
+    history.push(`/signin`);
+  };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
+
   return (
     <div className="header">
       <div className="header__logo-box" onClick={() => history.push("/movies")}>
@@ -38,50 +57,47 @@ const Header = ({
         <div className="header__searchbar">
           <SearchBar currentRoute={currentRoute} />
         </div>
-        {currentUser ? (
+        {token ? (
           <div className="header__options-secondary">
             <Link className="header__option" to="">
-              Hi, {currentUser.displayName}
+              Hi!
             </Link>
             <div
               className="header__option header__option--signout"
-              onClick={() => auth.signOut() && history.push(`/signin`)}
+              onClick={handleLogout}
             >
               Sign Out
             </div>
           </div>
         ) : (
           <div className="header__options-secondary">
-            <Link className="header__option" to="">
-              Hi, Guest
-            </Link>
-            <Link
-              className="header__option header__option--signin"
-              to="/signin"
-            >
-              Sign In
+            <Link className="header__option header__option--signin" to="">
+              FAQs
             </Link>
           </div>
         )}
       </div>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon={faBars}
         className="header__nav-menu-icon"
         onClick={ToggleMenuHidden}
       />
-      {hidden ? null : <NavMenu />}
+      {hidden ? currentUser : currentUser} */}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: selectCurrentUser(state),
-  hidden: selectToggleHidden(state),
-});
+const mapStateToProps = (state) => {
+  return {
+    token: state.user.token,
+  };
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  ToggleMenuHidden: () => dispatch(ToggleMenuHidden()),
-});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOutUser: () => dispatch(signOutUser()),
+  };
+};
 
 export default compose(
   withRouter,

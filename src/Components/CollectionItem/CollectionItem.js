@@ -2,18 +2,18 @@ import React from "react";
 import "./CollectionItem.scss";
 import Truncate from "../../Utils/Truncate";
 import { withRouter } from "react-router";
-import { FixString } from "../../Utils/FixString";
+// import { FixString } from "../../Utils/FixString";
 
 const CollectionItem = ({ item, movies, history }) => {
-  const { title, synopsis, image, name } = item;
+  const { title, synopsis, image, name, _id } = item;
   const synop = Truncate(synopsis, 120, " ..read more");
-  var titlePath = movies ? FixString(title) : null;
+  // var titlePath = movies ? FixString(title) : null;
   return (
     <div className="collection-item">
       {/* //Routing to movie detail */}
       <div
         onClick={() => {
-          return movies && history.push(`/movies/${titlePath}`);
+          return movies && history.push(`/movie-detail/${_id}`);
         }}
       >
         {/* Movie card grid */}

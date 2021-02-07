@@ -17,8 +17,16 @@ const CollectionOverviewMovie = lazy(() =>
 
 class Movies extends React.Component {
   componentDidMount() {
+    if (!this.props.token) {
+      this.props.history.push("signin"); // if no token, then redirect to sign in page
+    }
+
     this.props.dispatch(getMovies());
   }
+
+  // componentDidMount() {
+  //   this.props.dispatch(getMovies());
+  // }
 
   render() {
     return (
@@ -35,6 +43,7 @@ class Movies extends React.Component {
 const mapStateToProps = (state) => ({
   movieItems: selectMovieItems(state),
   isFetching: selectIsMovieFetching(state),
+  token: state.user.token,
 });
 
 export default connect(mapStateToProps)(Movies);
