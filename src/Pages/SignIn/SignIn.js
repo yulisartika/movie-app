@@ -18,7 +18,7 @@ function SignIn(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
+    // console.log(username, password);
 
     props.signInUser(username, password);
   };

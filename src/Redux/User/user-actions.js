@@ -17,7 +17,7 @@ export const signInUser = (username, password) => {
         password,
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         localStorage.setItem("access_token", response.data.data.token);
         dispatch({ type: SIGN_IN_SUCCESS, payload: response.data.data.token });
       });
@@ -33,7 +33,7 @@ export const signUpUser = (username, password, email) => {
         email,
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         dispatch({ type: SIGN_UP_SUCCESS, payload: response.data.message });
       });
   };

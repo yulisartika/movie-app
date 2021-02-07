@@ -16,7 +16,7 @@ function MovieDetails(props) {
     props.getMovieDetails({ id: params.id });
   }, [props.getMovieDetails, params.id]);
 
-  console.log(props);
+  // console.log(props);
 
   return (
     <div>

@@ -16,7 +16,7 @@ function SignUp(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email);
+    // console.log(username, password, email);
 
     if (password !== confirmPassword) {
       alert("Passwords don't match");

@@ -10,7 +10,7 @@ export const getMovieDetails = (params) => {
       .get(`${CINE_URL}movies/id?id=${id}`)
       .then((response) => {
         if (response.status === 200) {
-          console.log(response.data.data);
+          // console.log(response.data.data);
           dispatch({
             type: GET_MOVIE_DETAILS,
             payload: response.data.data,
