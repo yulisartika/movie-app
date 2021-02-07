@@ -33,7 +33,7 @@ export const signUpUser = (username, password, email) => {
         email,
       })
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         dispatch({ type: SIGN_UP_SUCCESS, payload: response.data.message });
       });
   };
