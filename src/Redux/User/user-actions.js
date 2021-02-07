@@ -27,7 +27,7 @@ export const signInUser = (username, password) => {
 export const signUpUser = (username, password, email) => {
   return (dispatch) => {
     return axios
-      .post(`http://cors-anywhere.herokuapp.com/${CINE_URL}users/register`, {
+      .post(`${CINE_URL}users/register`, {
         username,
         password,
         email,
