@@ -28,9 +28,8 @@ const Header = ({
   signOutUser,
   token,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const toggle = () => setIsOpen(!isOpen);
 
   const handleLogout = () => {
     signOutUser();
@@ -61,7 +60,7 @@ const Header = ({
         {token ? (
           <div className="header__options-secondary">
             <Link className="header__option" to="">
-              Hi
+              Hi!
             </Link>
             <div
               className="header__option header__option--signout"
@@ -72,11 +71,8 @@ const Header = ({
           </div>
         ) : (
           <div className="header__options-secondary">
-            <Link
-              className="header__option header__option--signin"
-              to="/signin"
-            >
-              Sign In
+            <Link className="header__option header__option--signin" to="">
+              FAQs
             </Link>
           </div>
         )}
