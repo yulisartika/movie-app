@@ -4,10 +4,10 @@ import Background from "../../Assets/Background.jpg";
 import FormInput from "../../Components/FormInput/FormInput";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { Link } from "react-router-dom";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { signInWithGoogle } from "../../Firebase/firebase.utils";
-import { auth } from "../../Firebase/firebase.utils";
+// import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { signInWithGoogle } from "../../Firebase/firebase.utils";
+// import { auth } from "../../Firebase/firebase.utils";
 
 import { connect } from "react-redux";
 import { signInUser } from "../../Redux/User/user-actions";
@@ -68,13 +68,13 @@ function SignIn(props) {
                   {" "}
                   Sign In{" "}
                 </CustomButton>
-                <CustomButton onClick={signInWithGoogle}>
+                {/* <CustomButton onClick={signInWithGoogle}>
                   <FontAwesomeIcon
                     icon={faGoogle}
                     className="signin__google-icon"
                   />
                   Sign In With Google
-                </CustomButton>
+                </CustomButton> */}
               </div>
             </div>
           </form>

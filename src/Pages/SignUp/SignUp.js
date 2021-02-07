@@ -4,7 +4,6 @@ import Background from "../../Assets/Background.jpg";
 import FormInput from "../../Components/FormInput/FormInput";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { Link } from "react-router-dom";
-import { auth, CreateUserProfileDocument } from "../../Firebase/firebase.utils";
 
 import { connect } from "react-redux";
 import { signUpUser } from "../../Redux/User/user-actions";
@@ -52,7 +51,7 @@ function SignUp(props) {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              label="Name"
+              label="Username"
               required
             />
 

@@ -1,6 +1,6 @@
 import React from "react";
-import reactDom from "react-dom";
-// import ReactStars from "react-rating-stars-component";
+// import reactDom from "react-dom";
+import ReactStars from "react-rating-stars-component";
 
 function Overview({ movieDetail }) {
   const {
@@ -34,15 +34,15 @@ function Overview({ movieDetail }) {
               </div>
 
               <div className="ratings">
-                {/* <div className="stars-rating">
+                <div className="stars-rating">
                   <ReactStars
                     size={18}
                     value={totalRating}
                     edit={false}
                     isHalf={true}
-                    // activeColor="#13d654"
+                    activeColor="#13d654"
                   />
-                </div> */}
+                </div>
                 <div className="review-numbers">{totalReview} reviews</div>
               </div>
 

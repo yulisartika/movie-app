@@ -4,20 +4,19 @@ import Logo from "../../Assets/logo.png";
 import "./Header.scss";
 import { withRouter } from "react-router";
 import SearchBar from "../SearchBar/SearchBar";
-import { auth } from "../../Firebase/firebase.utils";
-import {
-  selectCurrentUser,
-  selectToggleHidden,
-} from "../../Redux/User/user-selectors";
-import { ToggleMenuHidden } from "../../Redux/User/user-actions";
+// import {
+//   selectCurrentUser,
+//   selectToggleHidden,
+// } from "../../Redux/User/user-selectors";
+// import { ToggleMenuHidden } from "../../Redux/User/user-actions";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NavMenu from "./NavMenu";
+// import { faBars } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import NavMenu from "./NavMenu";
 
 import { useLocation } from "react-router-dom";
-import { Collapse, NavbarToggler, NavItem } from "reactstrap";
+// import { Collapse, NavbarToggler, NavItem } from "reactstrap";
 import { signOutUser } from "../../Redux/User/user-actions";
 
 const Header = ({
@@ -59,18 +58,10 @@ const Header = ({
         <div className="header__searchbar">
           <SearchBar currentRoute={currentRoute} />
         </div>
-
-        {/* <div
-          className="header__option header__option--signout"
-          onClick={() => auth.signOut() && history.push(`/signin`)}
-        >
-          Sign Out
-        </div> */}
-
         {token ? (
           <div className="header__options-secondary">
             <Link className="header__option" to="">
-              Hi, Guest
+              Hi
             </Link>
             <div
               className="header__option header__option--signout"
@@ -95,7 +86,7 @@ const Header = ({
         className="header__nav-menu-icon"
         onClick={ToggleMenuHidden}
       />
-      {hidden ? null : <NavMenu />} */}
+      {hidden ? currentUser : currentUser} */}
     </div>
   );
 };
