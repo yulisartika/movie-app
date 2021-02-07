@@ -16,28 +16,28 @@ import { withRouter } from "react-router";
 import { FooterContainer } from "./Components/Footer";
 
 class App extends React.Component {
-  unsubscribeFromAuth = null;
+  // unsubscribeFromAuth = null;
 
-  componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await CreateUserProfileDocument(userAuth);
+  // componentDidMount() {
+  //   this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+  //     if (userAuth) {
+  //       const userRef = await CreateUserProfileDocument(userAuth);
 
-        userRef.onSnapshot((snapShot) => {
-          this.props.setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          });
-        });
-      } else {
-        this.props.setCurrentUser(userAuth);
-      }
-    });
-  }
+  //       userRef.onSnapshot((snapShot) => {
+  //         this.props.setCurrentUser({
+  //           id: snapShot.id,
+  //           ...snapShot.data(),
+  //         });
+  //       });
+  //     } else {
+  //       this.props.setCurrentUser(userAuth);
+  //     }
+  //   });
+  // }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  // componentWillUnmount() {
+  //   this.unsubscribeFromAuth();
+  // }
 
   render() {
     return (

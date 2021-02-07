@@ -10620,11 +10620,6 @@ react-slick@^0.28.0:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-react-thanos@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-thanos/-/react-thanos-1.0.2.tgz#1193d170dd2f2b7e7867c3b9488ad02d153115dc"
-  integrity sha512-nV74CK/ERy0zNZ4FFZg29aOOHT1UvXE+KE4pqyxBYysVX2Y9izlg1I+qCExVYh28VVO54F9gbDEtELVEpVeJlQ==
-
 react@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
