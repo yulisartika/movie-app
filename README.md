@@ -7,7 +7,7 @@
 
 ### 🏠 [Homepage](https://gitlab.com/binar-10-mini-project/team-f/team-f-frontend/movie-app)
 
-### ✨ [Demo](heroku.com)
+### ✨ [Demo](https://cineflix-apps.herokuapp.com/)
 
 ## Install
 
