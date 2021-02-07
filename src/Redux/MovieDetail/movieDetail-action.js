@@ -7,7 +7,7 @@ export const getMovieDetails = (params) => {
   const { id } = params;
   return (dispatch) => {
     return axios
-      .get(`${CINE_URL}movies/id?id=${id}`)
+      .get(`http://cors-anywhere.herokuapp.com/${CINE_URL}movies/id?id=${id}`)
       .then((response) => {
         if (response.status === 200) {
           // console.log(response.data.data);
